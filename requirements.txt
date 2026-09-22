@@ -1,0 +1,33 @@
+# Data handling
+pandas
+numpy
+openpyxl
+
+# OCR
+pytesseract
+Pillow
+
+# NLP Bahasa Indonesia
+Sastrawi
+nltk
+
+# Sentiment (opsional, kalau pakai IndoBERT)
+transformers
+torch
+
+# Machine Learning
+scikit-learn
+xgboost
+shap
+
+# Visualisasi
+matplotlib
+seaborn
+
+# Notebook
+jupyter
+ipykernel
+
+# Utilitas
+python-dotenv
+tqdm

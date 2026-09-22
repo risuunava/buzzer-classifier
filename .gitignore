@@ -1,0 +1,40 @@
+# Virtual env
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Data mentah & sensitif (jangan di-push, terutama screenshot berisi data pribadi akun orang)
+data/raw/screenshots/*
+!data/raw/screenshots/.gitkeep
+data/raw/comments/*
+!data/raw/comments/.gitkeep
+data/raw/profiles/*
+!data/raw/profiles/.gitkeep
+
+# CSV hasil OCR & structuring -- masih berisi data pribadi (username, teks komentar,
+# follower count) walau sudah rapi, jadi tetap tidak boleh ikut ter-push
+data/interim/*
+!data/interim/.gitkeep
+
+# Dataset final untuk training -- berisi fitur turunan dari data pribadi yang sama.
+# Kalau nanti mau di-share demi reproducibility skripsi, anonimkan dulu (hapus/hash
+# kolom username & comment_text) baru boleh di-comment 2 baris di bawah ini.
+data/processed/*
+!data/processed/.gitkeep
+
+# Model besar
+models/saved/*.pkl
+models/saved/*.bin
+!models/saved/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+.vscode/
+*.log
+
+# Env vars
+.env
