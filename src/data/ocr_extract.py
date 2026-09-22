@@ -56,8 +56,6 @@ def run_batch():
         return
 
     for img_path in images:
-        text = extract_text_from_image(img_path)
-
         if is_profile_screenshot(img_path):
             out_dir = PROFILES_OUTPUT_DIR
             kind = "PROFIL"
@@ -66,6 +64,14 @@ def run_batch():
             kind = "KOMENTAR"
 
         out_path = out_dir / f"{img_path.stem}.txt"
+        
+        # Cek apakah file teks sudah ada, jika ya, lewati (skip)
+        if out_path.exists():
+            print(f"[SKIP - {kind}] {img_path.name} (sudah pernah di-OCR)")
+            continue
+
+        # Jika belum ada, baru lakukan OCR
+        text = extract_text_from_image(img_path)
         out_path.write_text(text, encoding="utf-8")
         print(f"[OK - {kind}] {img_path.name} -> {out_path}")
 

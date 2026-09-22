@@ -28,6 +28,10 @@ models/saved/*.pkl
 models/saved/*.bin
 !models/saved/.gitkeep
 
+# Grafik SHAP & laporan -- hasil generate otomatis, tidak perlu di-push
+reports/figures/
+!reports/figures/.gitkeep
+
 # Jupyter
 .ipynb_checkpoints/
 
@@ -38,3 +42,6 @@ models/saved/*.bin
 
 # Env vars
 .env
+
+STEP.md
+MVP.md

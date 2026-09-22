@@ -8,7 +8,7 @@ import pandas as pd
 from sklearn.metrics import (
     precision_score, recall_score, f1_score, roc_auc_score, classification_report
 )
-from src.models.train import FEATURE_COLUMNS, TARGET_COLUMN, DATASET_PATH
+from models.train import FEATURE_COLUMNS, TARGET_COLUMN, DATASET_PATH
 
 MODEL_DIR = Path("models/saved")
 

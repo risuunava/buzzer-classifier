@@ -7,7 +7,7 @@ import joblib
 import pandas as pd
 import shap
 import matplotlib.pyplot as plt
-from src.models.train import FEATURE_COLUMNS, DATASET_PATH
+from models.train import FEATURE_COLUMNS, DATASET_PATH
 
 MODEL_DIR = Path("models/saved")
 FIGURES_DIR = Path("reports/figures")

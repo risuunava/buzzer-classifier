@@ -31,3 +31,6 @@ ipykernel
 # Utilitas
 python-dotenv
 tqdm
+
+# Testing
+pytest

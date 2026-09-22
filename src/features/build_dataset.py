@@ -48,15 +48,19 @@ def main():
 
     # Gabungkan berdasarkan username (inner join: hanya akun yang punya
     # data komentar DAN profil yang ikut masuk dataset)
+    n_sebelum_join = len(comments_df)
     merged = comments_df.merge(
         profiles_df, on="username", how="inner", suffixes=("_comment", "_profile")
     )
 
-    dropped = len(comments_df) - len(merged)
+    print(
+        f"[build_dataset] Setelah inner join: {len(merged)}/{n_sebelum_join} baris komentar masuk dataset."
+    )
+    dropped = n_sebelum_join - len(merged)
     if dropped > 0:
         print(
-            f"[INFO] {dropped} baris komentar tidak punya pasangan data profil "
-            "(username tidak cocok) dan tidak ikut masuk dataset."
+            f"[build_dataset] {dropped} baris komentar di-drop karena tidak punya "
+            "pasangan data profil (username tidak cocok)."
         )
 
     if merged["label"].isna().any():
